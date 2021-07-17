@@ -1,0 +1,166 @@
+body {
+	margin-left: 250px;
+	font: 14px ¸¼Àº °íµñ;
+}
+
+header {
+	height: 120px;
+	background-color: White;
+	border: 10px solid rgb(17, 219, 226);
+	width: 1200px;
+	padding: 10px;
+	margin: 5px;
+	margin-bottom: 10px;
+}
+
+header form {
+	float: right;
+}
+
+header form ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header form ul li {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	border: 0;
+	float: left;
+	margin-left: 10px;
+}
+
+header a {
+	text-decoration: none;
+}
+
+.container {
+	width: 1350px;
+	background: white;
+}
+
+section {
+	float: left;
+	width: 700px;
+	padding: 5px;
+	margin-bottom: 100px;
+}
+
+.J1 {
+	display: inline-block;
+	border: 1px solid white;
+	height: 400px;
+	width: 360px;
+	margin: 5px;
+}
+
+.J2 {
+	display: inline-block;
+	height: 300px;
+	width: 360px;
+	margin: 5px;
+	position: relative;
+	bottom: 100px;
+}
+
+.J3 {
+	display: inline-block;
+	margin: 20px;
+}
+
+.btn {
+	width: 80px;
+	float: left;
+	height: 40px;
+	border: 1px solid black;
+	margin: 5px;
+	background: white;
+	color: black;
+	margin-top: 18px;
+	text-decoration: none;
+	line-height: 40px;
+	text-align:center;
+	cursor:pointer;
+}
+
+footer {
+	clear: both;
+	width: 1200px;
+	height: 100px;
+	border: 5px solid rgb(17, 219, 226);
+	font-size: 18px µ¸¿ò;
+}
+
+div.score {
+	text-align: left;
+}
+
+.view__quick{
+	position: sticky;
+	top:0;
+}
+.quick__wrapper:hover {
+	background-color: white;
+}
+.quick__static{
+	display: none;
+}
+ul, ol, li{
+	list-style: none;
+}
+.b li{
+	position:relative;
+	display: inline-block;
+	line-height:50px;
+	width:25%;
+	height:50px;
+	cursor:pointer;
+	font-size: 16px;
+}
+.b li a{
+	display:block;
+	color:black;
+	text-align:center;
+	text-decoration: none;
+}
+
+.b li a:hover {
+	background: #138535;
+	color:#fff;
+}
+
+.loginForm ul a{
+	font-size: 20px;
+	margin: 10px;
+	text-decoration: none;
+}
+#score{
+	text-align: center;
+}
+
+.avgScore{
+	font-size: 30px;
+}
+.scoreTable{
+	margin:auto;
+	width:60%;
+	text-align: center;
+	border:1px solid black;
+	font-size: 20px;
+}
+.scoreTable th{
+	border-bottom: 1px solid blue;
+}
+.scoreTable td{
+	border-bottom: 1px solid black;
+}
+.scoreTable #writer{
+	width:20%;
+}
+.scoreTable #score{
+	width:10%;
+}
+.scoreTable #review{
+	width:70%;
+}

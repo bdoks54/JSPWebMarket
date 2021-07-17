@@ -1,0 +1,89 @@
+ .delivery_info {
+    float: left;
+    width: 800px;
+}
+.or_i_tit {
+    height: 33px;
+    border-bottom: 2px solid #000;
+}
+.delivery_info .dv_box {
+
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+}
+.delivery_info .dv_box .dv_title {
+    float: left;
+    width: 120px;
+    padding-left: 50px;
+    background: #f5f5f5;
+}
+.delivery_info .dv_input {
+    float: left;
+    height: 10px;
+    padding: 15px 20px;
+    margin: 5px;
+}
+.delivery_info .dv_input  {
+    width: 250px;
+ 
+}
+
+.delivery_info .dv_box03 {
+    height: 150px;
+    line-height: 150px;
+}
+
+.form2{
+	  
+	
+	
+}
+.btn4{
+	color: #ffffff;
+background: #c0c0c0;
+font-size: 1em;
+padding: 0.3em 0.5em;
+text-decoration:none;
+margin-right: 0.1em;
+}
+.btn5{
+	
+
+    position:relative;
+    bottom:5px;
+
+    background-color: #c0c0c0;
+
+    border: none;
+
+    color:#ffffff;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: 1em;
+    height:32px;
+   width: 80px;
+
+
+    cursor: pointer;
+
+
+
+}
+
+ul li{
+	position: relative;
+	top:310px;
+	right:350px;
+	list-style: none;
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+	
+}

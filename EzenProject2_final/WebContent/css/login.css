@@ -1,0 +1,142 @@
+body { 
+    margin-left: 200px; 
+    font: 14px ¸¼Àº °íµñ;
+    width: 1350px;   
+}
+
+header {
+    
+   
+ height: 110px; background-color:White; 
+ border:10px solid rgb(17, 219, 226);
+    padding: 10px; margin:5px;
+    
+
+}
+
+header form {
+    
+    float: right;
+}
+
+header form ul{
+    
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+header form ul li{
+
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border : 0;
+    float: left;
+    margin-left: 10px;
+    
+}
+header a {
+    text-decoration: none;
+    color: black;
+}
+.container {
+    width: 1350px;
+    background: white;
+    
+}
+.navi{
+	 float:left;
+    width: 190px; height: 800px; 
+     margin: 5px;
+}
+.navi ul{
+	background-color: #50BCDF;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	width:190px;
+}
+.navi ul li a{
+	line-height:100px;
+	font-size:30px;
+	text-align:center;
+	display:block;
+	color:#000;
+	padding:8px;
+	text-decoration: none;
+	font-weight: bold;
+	height:100px;
+}
+
+.sidebar {
+    float:right;
+    top:50%; 
+    width: 200px; height: 400px; 
+    background: blue;
+    margin:55px;
+    
+}
+
+section {
+    align-content: center;
+    position: relative;
+    margin-top:200px;
+    border: 1px solid white;
+    float:left;
+    padding:5px;
+    left: 100px;
+    width: 600px;
+}
+
+.login-form {
+    width: 300px;
+    background-color: #EEEFF1;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    border: none;
+    
+}
+
+.text-field {
+	  
+      font-size: 25px;
+      padding: 10px;
+      border: none;
+      width: 400px;
+      margin-bottom: 15px;
+ 
+}
+ 
+.submit-btn {
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  width: 420px;
+  background-color: rgb(17, 219, 226);
+  margin-bottom: 30px;
+  color: white;
+}
+ 
+.links {
+    text-align: center;
+}
+ 
+.links a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  
+}
+
+footer {
+
+   clear:both;
+    width:1330px;
+    height:100px;
+    border:1px solid rgb(17, 219, 226);
+    font-size:18px µ¸¿ò;
+    
+}

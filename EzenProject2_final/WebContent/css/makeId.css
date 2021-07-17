@@ -1,0 +1,108 @@
+body {
+    margin-left: 200px;
+    font: 14px ¸¼Àº °íµñ;
+    width: 1350px;
+    
+    
+}
+
+header {
+    
+
+ height: 110px; background-color:White; 
+ border:10px solid rgb(17, 219, 226);
+    padding: 10px; margin:5px;
+    
+
+}
+
+header a, header a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+
+
+header img{
+    width: 200px;
+    height: 100px;
+}
+header form {
+    float: right;
+}
+header form ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+header form ul li{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border : 0;
+    float: left;
+    margin-left: 10px;
+}
+
+header p{
+    float: right;
+}
+
+.isLogin{
+    display:none;
+}
+.container {
+    width: 1350px;
+    margin:auto;
+    background: white;
+    
+}
+.navi{
+	 float:left;
+    width: 190px; height: 800px; 
+     margin: 5px;
+}
+.navi ul{
+	background-color: #50BCDF;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	width:190px;
+}
+.navi ul li a{
+	line-height:100px;
+	font-size:30px;
+	text-align:center;
+	display:block;
+	color:#000;
+	padding:8px;
+	text-decoration: none;
+	font-weight: bold;
+	height:100px;
+}
+.navi ul li a:hover{
+	background-color: #50BCFF;
+	color: white;
+}
+
+
+section {
+
+    float:left;
+    width:800px;
+    padding:5px;
+  }
+
+.aligncenter{
+    text-align: center;
+}
+
+footer {
+    
+    clear:both;
+    width:1330px;
+    height:100px;
+    border:1px solid rgb(17, 219, 226);
+    font-size:18px µ¸¿ò;
+    
+}

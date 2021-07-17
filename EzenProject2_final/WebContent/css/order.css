@@ -1,0 +1,45 @@
+.table1 {
+	width:1300px;
+	height:120px;
+  border-collapse: collapse;
+  border-top: 1px solid #444444;
+  border-spacing: 1px;
+  text-align: center;
+  line-height: 1.5;
+  margin: 1px 300px;
+}
+.table1 th {
+ 
+  height:1em;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #fff;
+  background: #c0c0c0 ;
+}
+.table1 td {
+  width: 155px;
+
+  padding: 10px;
+
+  border-bottom: 1px solid #ccc;
+  background: #ffffff;
+}
+
+ul li{
+	position: relative;
+	left:40%;
+	list-style: none;
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+	
+}
+.btn6{
+	color: #ffffff;
+background: #c0c0c0;
+font-size: 1em;
+padding: 0.3em 0.5em;
+text-decoration:none;
+margin-right: 0.1em;
+}

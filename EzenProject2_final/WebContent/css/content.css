@@ -1,0 +1,98 @@
+header {
+    
+   
+ height: 110px;
+ width:1330px;
+ background-color:White; 
+ border:10px solid rgb(17, 219, 226);
+ padding: 10px; 
+ margin: 0 auto;
+ margin-bottom: 30px;
+    
+
+}
+
+header form {
+    
+    float: right;
+}
+
+header form ul{
+    
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+header form ul li{
+
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border : 0;
+    float: left;
+    margin-left: 10px;
+    
+}
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+
+table.boardTable{
+	width:1370px;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: 5px solid black;
+	
+	table-layout:fixed;
+	
+}
+table.boardTable tr{
+	border:2px solid black;
+	padding: 20px;
+}
+table.boardTable th{
+		background-color: skyblue;
+		text-align: center;
+	}
+table.boardTable td{
+	font-size: 25px;
+	text-align:center;
+	padding: 20px;
+}
+.content2{
+	height: 600px;
+
+	
+	
+}
+.ccommentForm{
+	border:none;
+}
+
+table.commentTable{
+		border-collapse:collapse;
+		line-height: 1.5;
+		border-spacing: 1px;
+		width:1300px;
+		margin: 0 auto;
+	}
+table.commentTable th{
+		border: 2px solid black;
+		background-color: skyblue;
+	}	
+	
+table.commentTable td{
+		border: 1px solid black;
+		padding-left: 10px;
+	}
+	
+	td.content{
+		vertical-align: top;
+		padding: 10px;
+	}
+	table.commentForm{
+		margin: 0 auto;
+	}
+	
