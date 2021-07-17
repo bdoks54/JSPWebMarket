@@ -1,0 +1,86 @@
+create table customer(
+cust_id varchar2(50) primary key,
+cust_name varchar2(20)not null,
+cust_password varchar2(50) not null,
+cust_email varchar2(100),
+cust_pNum varchar2(50));
+
+create table QnA(
+qna_num number(4) primary key,
+qna_id varchar2(50),
+qna_name varchar2(20),
+qna_title varchar2(50),
+qna_content varchar2(1000),
+qna_date date,
+qna_count number(4)
+);
+
+create table comment_board(
+comment_num number not null,
+comment_board number not null CONSTRAINT board_num_fk REFERENCES qna(qna_num),
+comment_id varchar2(50) CONSTRAINT cust_id_fk REFERENCES customer(cust_id),
+comment_date date,
+comment_parent number,
+comment_content varchar2(500) not null
+);
+
+select * from comment_board;
+SELECT count(*) FROM COMMENT_BOARD WHERE COMMENT_BOARD = 103 AND COMMENT_PARENT is not null;
+SELECT * FROM COMMENT_BOARD WHERE comment_parent=2;
+
+create table product(
+product_id varchar(30) primary key,
+product_name varchar2(100)not null,
+product_price number(10) not null,
+product_desc varchar2(500) not null,
+product_url varchar2(100) not null,
+product_durl varchar2(100) not null
+);
+
+create table cart(
+cart_id varchar(30) primary key,
+cart_count number(3) not null,
+cust_id varchar2(50) CONSTRAINT customer_cust_id_fk REFERENCES customer(cust_id),
+product_id varchar2(30) CONSTRAINT product_product_id_fk REFERENCES product(product_id)
+);
+
+create table score(
+score_custid varchar2(50) CONSTRAINT customer_cust_id_fk2 REFERENCES customer(cust_id),
+score_prodid varchar(30) CONSTRAINT product_product_id_fk2 REFERENCES product(product_id),
+score_score number(2),
+score_review varchar(500)
+);
+
+INSERT INTO product VALUES ('c1','[인텔]코어i5-9세대 9400F',182600,'[인텔(소켓1151v2) / 14nm / 헥사(6)코어 / 쓰레드 6개 / 2.90GHz / 9MB / 64비트 / 65W / 옵테인]','/image/inteli5-9400f.jpg','/dimage/I5-9400F.jpg');
+INSERT INTO product VALUES ('c2','[인텔]코어i3-10세대 10100',193000,'[인텔(소켓1200) / 14nm / 4코어 / 쓰레드 8개 / 3.6GHz / 6MB / 64비트 / 65W / 옵테인]','/image/intel코어10세대2.jpg','/dimage/I3-10100.png');
+INSERT INTO product VALUES ('c3','[AMD]라이젠3프로 4350g',187000,'[AMD(소켓AM4) / 7nm / 4코어 / 쓰레드 8개 / 3.8GHz / 4MB / 64비트 / 65W / 옵테인]','/image/라이젠3%20프로%2043502.jpg','/dimage/RYZEN4350G.jpg');
+INSERT INTO product VALUES ('c4','[AMD]라이젠5 마티스 3600',189000,'[AMD(소켓AM4) / 7nm / 6코어 / 쓰레드 12개 / 3.6GHz / 32MB / 64비트 / 65W / 옵테인]','/image/라이젠5마티스36002.jpg','/dimage/RYZEN3600.jpg');
+
+INSERT INTO product VALUES ('r5','[삼성전자]삼성 DDR4 8GB PC4-25600',45200,'DDR4 / PC용 / 8GB / 3200MHz (PC4-25600) / 방열판 무 / PC용','/image/ddr48g2.jpg','/dimage/DDR48G.PNG');
+INSERT INTO product VALUES ('r6','[삼성전자] 삼성 DDR4 16GB PC4-21300',90700,'16GB / 288핀 / DDR4 2666(PC4 21300) / DDR4-SDRAM','/image/ddr416g.jpg','/dimage/DDR416G.PNG');
+INSERT INTO product VALUES ('r7','[ESSENCORE] DDR4 8GB PC4-25600 KLEVV CL22',47800,'DDR4 / PC용 / 3200MHz (PC4-25600) / 램타이밍: CL22-22-22-52 / 1.20V / 히트싱크: 미포함 / 방열판 무 / 8GB /방열판 무','/image/klevv8g.jpg','/dimage/essencoreDDR48G.jpg');
+INSERT INTO product VALUES ('r8','[G.SKILL] 지스킬 DDR4 32GB PC4-25600 [16G X2] CL16 TRIDENT Z ROYAL 실버',340000,'16GB x 2 / 288핀 / DDR4 3200(PC4 25600) / 16-18-18-38 / DDR4-SDRAM / 방열판장착','/image/gskill32g.jpg','/dimage/G.SKILL32G.jpg');
+
+INSERT INTO product VALUES ('m9','[ASRock] H470M-HDV 에즈윈 벌크',77700,'인텔(소켓1200) / (인텔) H470 / M-ATX (19.7x18.8cm) / 전원부: 5페이즈 / DDR4 / 메모리 용량: 최대 64GB / XMP / VGA 연결: PCIe3.0 x16 / 그래픽 출력: D-SUB , DVI , HDMI / PCIe 슬롯: 2개 / SATA3: 4개 / PS/2: 콤보 1개 / USB 2.0: 후면 4개 / USB 3.0: 후면 2개 / 기가비트 LAN / UEFI','/image/%5Basrock%5Dh470m-hdv.jpg','/dimage/H470M.jpg');
+INSERT INTO product VALUES ('m10','[GIGABYTE] A520M S2H 듀러블에디션 피씨디렉트 ',85200,'AMD(소켓AM4) / (AMD) A520 / M-ATX (24.4x20.5cm) / 전원부: 4+3페이즈 / DDR4 / 메모리 용량: 최대 64GB / XMP / VGA 연결: PCIe3.0 x16 / 그래픽 출력: D-SUB , DVI , HDMI / PCIe 슬롯: 3개 / M.2: 1개 / SATA3: 4개 / PS/2: 콤보 1개 / USB 2.0: 후면 2개 / USB 3.1 Gen 1: 후면 4개 / 기가비트 LAN / UEFI / LED','/image/%5Bgigabyte%5Da520m.jpg','/dimage/GIGABYTEA520M.jpg');
+INSERT INTO product VALUES ('m11','[ASRock] H510M-HDV 에즈윈 벌크',84960,'인텔(소켓1200) / (인텔) H510 / M-ATX (19.7x18.8cm) / 전원부: 5페이즈 / DDR4 / 메모리 용량: 최대 64GB / XMP / VGA 연결: PCIe4.0 x16 / 그래픽 출력: D-SUB , DVI , HDMI / PCIe 슬롯: 2개 / SATA3: 4개 / PS/2: 2개 / USB 2.0: 후면 4개 / USB 3.0: 후면 2개 / 기가비트 LAN / UEFI
+','/image/%5Basrock%5Dh510m.jpg','/dimage/H510M.jpg');
+INSERT INTO product VALUES ('m12','[MSI] A520M-A PRO ',78000,'AMD(소켓AM4) / (AMD) A520 / M-ATX (23.6x20cm) / DDR4 / 메모리 용량: 최대 64GB / XMP / VGA 연결: PCIe3.0 x16 / 그래픽 출력: DVI , HDMI / PCIe 슬롯: 2개 / M.2: 1개 / SATA3: 4개 / PS/2: 2개 / USB 2.0: 후면 2개 / USB 3.1 Gen 1: 후면 4개 / 기가비트 LAN / UEFI','/image/%5Bmsi%5Da520m.jpg','/dimage/MSIA520M.jpg');
+
+INSERT INTO product VALUES ('s13','[마이크론] Crucial MX500 Series 250GB TLC',50000,'SSD / 2.5형 / SATA3(6Gb/s) / 250GB / 읽기 560MB/s / 쓰기 510MB/s / TLC(3D NAND) / 컨트롤러 고정(SMI SM2258) / DRAM 탑재','/image/%5B마이크론%5Dcrucialmx500.jpg','/dimage/MX500.jpg');
+INSERT INTO product VALUES ('s14','[삼성전자] 870 series EVO 250GB MZ-77E250B/KR',62500,'Samsung V-NAND 3bit MLC /Samsung MKX Controller /Samsung 512 MB Low Power DDR4 SDRAM /SATA 6 Gb/s (SATA 3 Gb/s  SATA 1.5 Gb/s 호환 가능) / PC/노트북용 / SATA3 / 250GB / TLC(3DNAND) / 읽기500~990M / 쓰기500~990M / 컨트롤러고정','/image/%5B삼성전자%5D870.jpg','/dimage/870EVO.jpg');
+INSERT INTO product VALUES ('s15','[삼성전자] 970 EVO Plus series 500GB M.2 NVMe MZ-V7S500BW',119500,'내장형SSD / M.2 (2280) / PCIe3.0x4 (32GT/s) / NVMe 1.3 / TLC(토글) / 3D낸드 / 삼성 Phoenix / DDR4 512MB / 최대 3,500MB/s / 최대 3,200MB/s / 1,500,000시간 / TRIM 지원 / GC 기능 / S.M.A.R.T 지원 / DEVSLP 지원 ','/image/%5B삼성%5D970.jpg','/dimage/970EVO.jpg');
+INSERT INTO product VALUES ('s16','[SK hynix] Gold P31 M.2 NVMe SSD 2280 500GB TLC',98000,'PC/노트북용 / M.2(NVMe) / 500GB / TLC(3DNAND) / 읽기3000~3990M / 쓰기3000~3900M / 컨트롤러고정 / DRAM탑재 / 보증기간5년 / 80mm','/image/skgoldp31.jpg','/dimage/SKGOLD.png');
+
+INSERT INTO product VALUES ('h17','[Western Digital] RED PLUS HDD 4TB WD40EFZX',145000,'4TB / 5,400RPM / 128MB / 보증기간3년 / SATA3 / NAS용(3.5인치) / CMR / 단일','/image/westernRed.jpg','/dimage/REDPLUSHDD.jpg');
+INSERT INTO product VALUES ('h18','[SEAGATE] IRONWOLF HDD 4TB ST4000VN008',149000,'4TB / 5,900RPM / 64MB / 보증기간3년 / SATA3 / NAS용(3.5인치) / PMR','/image/seagatehdd.jpg','/dimage/IRONWOLFHDD.jpg');
+INSERT INTO product VALUES ('h19','[Western Digital] Ultrastar HDD 패키지 4TB',169000,'4TB / 7,200RPM / 256MB / 보증기간3년 / SATA3 / NAS용(3.5인치) / PMR / 패키지 단일','/image/ultrastathdd.jpg','/dimage/ULTRASTARHDD.jpg');
+INSERT INTO product VALUES ('h20','[SEAGATE] BARRACUDA HDD 4TB ST4000DM004',117000,'HDD (PC용) / 8.9cm(3.5인치) / 4TB / SATA3 (6Gb/s) / 5,400RPM / 메모리 256MB / 최대 190MB/s / 두께: 20.2mm / 소음(유휴/탐색): 22/24dB / 2년 / 다층캐싱(MTC) / 무게: 최대 490g','/image/barracudahdd.jpg','/dimage/BARRACUDA2.jpg');
+
+INSERT INTO product VALUES ('v21','[GIGABYTE] GeForce RTX 2060 UDV OC D6 6GB 피씨디렉트',849000,'TX 2060 / 12nm / 부스트클럭: 1755MHz / 스트림 프로세서: 1920개 / PCIe3.0x16 / GDDR6(DDR6) / 출력단자: HDMI2.0 , DP1.4 / 부가기능: 4K 해상도 지원 , HDR 지원 , HDCP 지원 / 정격파워 500W 이상 / 전원 포트: 8핀 x1개 / 전원부: 4+2페이즈 / 2개 팬 / 가로(길이): 226mm / 백플레이트','/image/gigabyteRTX2060.jpg','/dimage/RTX20603.jpg');
+INSERT INTO product VALUES ('v22','[GIGABYTE] Radeon™ RX 580 Gaming D5 8GB 피씨디렉트',595000,'RX 580 / 14nm / 베이스클럭: 1340MHz / 부스트클럭: 1355MHz / 스트림 프로세서: 2304개 / PCIe3.0x16 / GDDR5(DDR5) / 출력단자: HDMI2.0, DP1.4, DVI(듀얼링크) / 정격파워 500W 이상 / 전원 포트: 8핀 x1개 / 전원부: 8페이즈 / 2개 팬 / 가로(길이): 232mm / 백플레이트 / LED 라이트 / RGB FUSION','/image/radeonRX580.jpg','/dimage/RX580.jpg');
+INSERT INTO product VALUES ('v23','[ASUS] GeForce GT 710 SL D5 1GB',44900,'지포스 GT710 / PCI Express2.0 / DDR5 1GB/ Engine Clock 954Mhz / CUDA Core 192 / D-sub *1 DVI*1 HDMI*1','/image/gt710.jpg','/dimage/GT710.jpg');
+INSERT INTO product VALUES ('v24','[XFX] Radeon™ RX 6700 XT QICK 319 BLACK D6 12GB STCOM',1231000,'RX 6700 XT / 7nm / 부스트클럭: 2622MHz / 스트림 프로세서: 2560개 / PCIe4.0x16 / GDDR6(DDR6) / 출력단자: HDMI2.1 , DP1.4 / 부가기능: 제로팬(0-dB기술) , 8K 해상도 지원 , 4K 해상도 지원 , HDR 지원 , Dual BIOS , HDCP 지원 / 정격파워 650W','/image/rx6700.jpg','/dimage/RX6700.jpg');
+
+
+COMMIT;
